@@ -2,16 +2,7 @@ from pydantic import BaseModel, Field
 
 
 class InputModel(BaseModel):
-    """
-    Load Page Piece Input Model
-    """
-    script: str = Field(
-        description="Preceding script.",
-    )
-
-    url: str = Field(
-        description="Page url to be loaded.",
-    )
+    pass
 
 
 class OutputModel(BaseModel):
