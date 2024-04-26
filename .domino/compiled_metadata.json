@@ -1,110 +1,130 @@
 {
-    "ExampleSimplePiece": {
-        "name": "ExampleSimplePiece",
+    "OpenBrowserPiece": {
+        "name": "OpenBrowserPiece",
         "dependency": {
             "dockerfile": null,
             "requirements_file": "requirements_0.txt"
         },
         "tags": [
-            "Example"
+            "selenium",
+            "web-browser"
         ],
         "style": {
-            "node_label": "Simple Piece",
+            "node_label": "Open Browser",
             "node_type": "default",
             "node_style": {
                 "backgroundColor": "#ebebeb"
             },
             "useIcon": true,
-            "icon_class_name": "fas fa-database",
+            "icon_class_name": "fa-solid fa-globe-pointer",
             "iconStyle": {
                 "cursor": "pointer"
             }
         },
-        "description": "This is an example of a simple Domino Piece",
+        "description": "Start a new browser session.",
         "container_resources": {
             "requests": {
-                "cpu": "100m",
-                "memory": "128Mi"
+                "cpu": 100,
+                "memory": 128
             },
             "limits": {
-                "cpu": "500m",
-                "memory": "512Mi"
+                "cpu": 500,
+                "memory": 512
             }
         },
         "input_schema": {
+            "properties": {},
             "title": "InputModel",
-            "type": "object",
-            "properties": {
-                "distribution_name": {
-                    "description": "Name of the distribution to sample from",
-                    "allOf": [
-                        {
-                            "$ref": "#/definitions/DistributionType"
-                        }
-                    ]
-                },
-                "distribution_mean": {
-                    "title": "Distribution Mean",
-                    "description": "Distribution mean",
-                    "type": "number"
-                },
-                "distribution_sd": {
-                    "title": "Distribution Sd",
-                    "description": "Distribution standard deviation",
-                    "default": 1.0,
-                    "exclusiveMinimum": 0.0,
-                    "type": "number"
-                }
-            },
-            "required": [
-                "distribution_name",
-                "distribution_mean"
-            ],
-            "definitions": {
-                "DistributionType": {
-                    "title": "DistributionType",
-                    "description": "An enumeration.",
-                    "enum": [
-                        "gaussian",
-                        "poisson"
-                    ],
-                    "type": "string"
-                }
-            }
+            "type": "object"
         },
         "output_schema": {
-            "title": "OutputModel",
-            "type": "object",
+            "description": "Load Page Piece Output Model",
             "properties": {
-                "message": {
-                    "title": "Message",
-                    "description": "Output message to log",
+                "script": {
+                    "description": "Parsed script of this piece.",
+                    "title": "Script",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "script"
+            ],
+            "title": "OutputModel",
+            "type": "object"
+        },
+        "secrets_schema": null,
+        "source_url": "https://github.com/tdari/web-browser-pieces/tree/main/pieces/OpenBrowserPiece"
+    },
+    "LoadPagePiece": {
+        "name": "LoadPagePiece",
+        "dependency": {
+            "dockerfile": null,
+            "requirements_file": "requirements_0.txt"
+        },
+        "tags": [
+            "selenium",
+            "web-browser"
+        ],
+        "style": {
+            "node_label": "Load URL",
+            "node_type": "default",
+            "node_style": {
+                "backgroundColor": "#ebebeb"
+            },
+            "useIcon": true,
+            "icon_class_name": "fa-solid fa-globe-pointer",
+            "iconStyle": {
+                "cursor": "pointer"
+            }
+        },
+        "description": "Go to web page for given url",
+        "container_resources": {
+            "requests": {
+                "cpu": 100,
+                "memory": 128
+            },
+            "limits": {
+                "cpu": 500,
+                "memory": 512
+            }
+        },
+        "input_schema": {
+            "description": "Load Page Piece Input Model",
+            "properties": {
+                "script": {
+                    "description": "Preceding script.",
+                    "title": "Script",
                     "type": "string"
                 },
-                "sample_result": {
-                    "title": "Sample Result",
-                    "description": "The result of this Piece's processing",
+                "url": {
+                    "description": "Page url to be loaded.",
+                    "title": "Url",
                     "type": "string"
                 }
             },
             "required": [
-                "message",
-                "sample_result"
-            ]
+                "script",
+                "url"
+            ],
+            "title": "InputModel",
+            "type": "object"
         },
-        "secrets_schema": {
-            "title": "SecretsModel",
-            "type": "object",
+        "output_schema": {
+            "description": "Load Page Piece Output Model",
             "properties": {
-                "EXAMPLE_OPERATOR_SECRET_1": {
-                    "title": "Example Operator Secret 1",
-                    "description": "A secret necessary to run this Piece",
+                "script": {
+                    "description": "Parsed script of this piece.",
+                    "title": "Script",
                     "type": "string"
                 }
             },
             "required": [
-                "EXAMPLE_OPERATOR_SECRET_1"
-            ]
-        }
+                "script"
+            ],
+            "title": "OutputModel",
+            "type": "object"
+        },
+        "secrets_schema": null,
+        "source_url": "https://github.com/tdari/web-browser-pieces/tree/main/pieces/LoadPagePiece"
     }
 }
