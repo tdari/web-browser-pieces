@@ -16,9 +16,9 @@ def test_load_page_piece():
     piece_output = piece_dry_run(piece_name="LoadPagePiece", input_data=input_data)
 
     test_script = f"""
-        {input_data["script"]}
-        self.logger.info(f"Loading URL: {input_data["url"]}")
-        driver.get({input_data["url"]})
+{input_data["script"]}
+self.logger.info(f"Loading URL: {input_data["url"]}")
+driver.get({input_data["url"]})
 
         """
 
