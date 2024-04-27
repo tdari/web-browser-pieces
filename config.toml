@@ -2,4 +2,4 @@
 REGISTRY_NAME = "tdari"
 REPOSITORY_NAME = "web-browser-pieces"
 REPOSITORY_LABEL = "Web browser pieces"
-VERSION = "0.1.2"
+VERSION = "0.1.3"
