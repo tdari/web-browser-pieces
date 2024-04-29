@@ -1,0 +1,5 @@
+[repository]
+REGISTRY_NAME = "tdari"
+REPOSITORY_NAME = "web-browser-pieces"
+REPOSITORY_LABEL = "Web browser pieces"
+VERSION = "0.1.0"

@@ -1,0 +1,15 @@
+{
+    "group0": {
+        "dependency": {
+            "dockerfile": null,
+            "requirements_file": "requirements_0.txt"
+        },
+        "pieces": [
+            "RunScriptPiece",
+            "OpenBrowserPiece",
+            "LoadPagePiece"
+        ],
+        "secrets": [],
+        "source_image": "ghcr.io/tdari/web-browser-pieces:0.2.2-group0"
+    }
+}

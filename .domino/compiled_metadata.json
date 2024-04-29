@@ -1,0 +1,196 @@
+{
+    "RunScriptPiece": {
+        "name": "RunScriptPiece",
+        "dependency": {
+            "dockerfile": null,
+            "requirements_file": "requirements_0.txt"
+        },
+        "tags": [
+            "selenium",
+            "web-browser"
+        ],
+        "style": {
+            "node_label": "Run Script",
+            "node_type": "default",
+            "node_style": {
+                "backgroundColor": "#ebebeb"
+            },
+            "useIcon": true,
+            "icon_class_name": "fa-solid fa-globe-pointer",
+            "iconStyle": {
+                "cursor": "pointer"
+            }
+        },
+        "description": "Execute the given script.",
+        "container_resources": {
+            "requests": {
+                "cpu": 100,
+                "memory": 128
+            },
+            "limits": {
+                "cpu": 500,
+                "memory": 512
+            }
+        },
+        "input_schema": {
+            "description": "Run Script Piece Input Model",
+            "properties": {
+                "script": {
+                    "description": "Script to execute.",
+                    "title": "Script",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "script"
+            ],
+            "title": "InputModel",
+            "type": "object"
+        },
+        "output_schema": {
+            "description": "Run Script Piece Output Model",
+            "properties": {
+                "message": {
+                    "description": "Parsed script of this piece.",
+                    "title": "Message",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "message"
+            ],
+            "title": "OutputModel",
+            "type": "object"
+        },
+        "secrets_schema": null,
+        "source_url": "https://github.com/tdari/web-browser-pieces/tree/main/pieces/RunScriptPiece"
+    },
+    "OpenBrowserPiece": {
+        "name": "OpenBrowserPiece",
+        "dependency": {
+            "dockerfile": null,
+            "requirements_file": "requirements_0.txt"
+        },
+        "tags": [
+            "selenium",
+            "web-browser"
+        ],
+        "style": {
+            "node_label": "Open Browser",
+            "node_type": "default",
+            "node_style": {
+                "backgroundColor": "#ebebeb"
+            },
+            "useIcon": true,
+            "icon_class_name": "fa-solid fa-globe-pointer",
+            "iconStyle": {
+                "cursor": "pointer"
+            }
+        },
+        "description": "Start a new browser session.",
+        "container_resources": {
+            "requests": {
+                "cpu": 100,
+                "memory": 128
+            },
+            "limits": {
+                "cpu": 500,
+                "memory": 512
+            }
+        },
+        "input_schema": {
+            "properties": {},
+            "title": "InputModel",
+            "type": "object"
+        },
+        "output_schema": {
+            "description": "Load Page Piece Output Model",
+            "properties": {
+                "script": {
+                    "description": "Parsed script of this piece.",
+                    "title": "Script",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "script"
+            ],
+            "title": "OutputModel",
+            "type": "object"
+        },
+        "secrets_schema": null,
+        "source_url": "https://github.com/tdari/web-browser-pieces/tree/main/pieces/OpenBrowserPiece"
+    },
+    "LoadPagePiece": {
+        "name": "LoadPagePiece",
+        "dependency": {
+            "dockerfile": null,
+            "requirements_file": "requirements_0.txt"
+        },
+        "tags": [
+            "selenium",
+            "web-browser"
+        ],
+        "style": {
+            "node_label": "Load URL",
+            "node_type": "default",
+            "node_style": {
+                "backgroundColor": "#ebebeb"
+            },
+            "useIcon": true,
+            "icon_class_name": "fa-solid fa-globe-pointer",
+            "iconStyle": {
+                "cursor": "pointer"
+            }
+        },
+        "description": "Go to web page for given url",
+        "container_resources": {
+            "requests": {
+                "cpu": 100,
+                "memory": 128
+            },
+            "limits": {
+                "cpu": 500,
+                "memory": 512
+            }
+        },
+        "input_schema": {
+            "description": "Load Page Piece Input Model",
+            "properties": {
+                "script": {
+                    "description": "Preceding script.",
+                    "title": "Script",
+                    "type": "string"
+                },
+                "url": {
+                    "description": "Page url to be loaded.",
+                    "title": "Url",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "script",
+                "url"
+            ],
+            "title": "InputModel",
+            "type": "object"
+        },
+        "output_schema": {
+            "description": "Load Page Piece Output Model",
+            "properties": {
+                "script": {
+                    "description": "Parsed script of this piece.",
+                    "title": "Script",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "script"
+            ],
+            "title": "OutputModel",
+            "type": "object"
+        },
+        "secrets_schema": null,
+        "source_url": "https://github.com/tdari/web-browser-pieces/tree/main/pieces/LoadPagePiece"
+    }
+}
