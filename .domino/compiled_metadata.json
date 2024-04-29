@@ -105,10 +105,16 @@
                     "description": "Ip address of remote web driver host.",
                     "title": "Ip Addr",
                     "type": "string"
+                },
+                "port": {
+                    "description": "Port number of remote web driver host.",
+                    "title": "Port",
+                    "type": "string"
                 }
             },
             "required": [
-                "ip_addr"
+                "ip_addr",
+                "port"
             ],
             "title": "InputModel",
             "type": "object"
