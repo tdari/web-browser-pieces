@@ -9,6 +9,10 @@ class InputModel(BaseModel):
         description="Ip address of remote web driver host."
     )
 
+    port: str = Field(
+        description="Port number of remote web driver host."
+    )
+
 
 class OutputModel(BaseModel):
     """
