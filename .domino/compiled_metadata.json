@@ -99,12 +99,22 @@
             }
         },
         "input_schema": {
-            "properties": {},
+            "description": "Open Browser Piece Input Model",
+            "properties": {
+                "ip_addr": {
+                    "description": "Ip address of remote web driver host.",
+                    "title": "Ip Addr",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "ip_addr"
+            ],
             "title": "InputModel",
             "type": "object"
         },
         "output_schema": {
-            "description": "Load Page Piece Output Model",
+            "description": "Open Browser Piece Output Model",
             "properties": {
                 "script": {
                     "description": "Parsed script of this piece.",
@@ -192,5 +202,71 @@
         },
         "secrets_schema": null,
         "source_url": "https://github.com/tdari/web-browser-pieces/tree/main/pieces/LoadPagePiece"
+    },
+    "CloseBrowserPiece": {
+        "name": "CloseBrowserPiece",
+        "dependency": {
+            "dockerfile": null,
+            "requirements_file": "requirements_0.txt"
+        },
+        "tags": [
+            "selenium",
+            "web-browser"
+        ],
+        "style": {
+            "node_label": "Close Browser",
+            "node_type": "default",
+            "node_style": {
+                "backgroundColor": "#ebebeb"
+            },
+            "useIcon": true,
+            "icon_class_name": "fa-solid fa-globe-pointer",
+            "iconStyle": {
+                "cursor": "pointer"
+            }
+        },
+        "description": "Close current browser session.",
+        "container_resources": {
+            "requests": {
+                "cpu": 100,
+                "memory": 128
+            },
+            "limits": {
+                "cpu": 500,
+                "memory": 512
+            }
+        },
+        "input_schema": {
+            "description": "Close Browser Piece Input Model",
+            "properties": {
+                "script": {
+                    "description": "Preceding script.",
+                    "title": "Script",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "script"
+            ],
+            "title": "InputModel",
+            "type": "object"
+        },
+        "output_schema": {
+            "description": "Close Browser Piece Output Model",
+            "properties": {
+                "script": {
+                    "description": "Parsed script of this piece.",
+                    "title": "Script",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "script"
+            ],
+            "title": "OutputModel",
+            "type": "object"
+        },
+        "secrets_schema": null,
+        "source_url": "https://github.com/tdari/web-browser-pieces/tree/main/pieces/CloseBrowserPiece"
     }
 }
