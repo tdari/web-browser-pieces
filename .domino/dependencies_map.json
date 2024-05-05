@@ -8,9 +8,10 @@
             "RunScriptPiece",
             "OpenBrowserPiece",
             "LoadPagePiece",
+            "TakeScreenshotPiece",
             "CloseBrowserPiece"
         ],
         "secrets": [],
-        "source_image": "ghcr.io/tdari/web-browser-pieces:0.1.1-group0"
+        "source_image": "ghcr.io/tdari/web-browser-pieces:development-group0"
     }
 }
