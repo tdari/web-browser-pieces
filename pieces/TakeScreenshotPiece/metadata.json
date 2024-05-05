@@ -1,0 +1,25 @@
+{
+    "name": "TakeScreenShotPiece",
+    "description": "Takes screenshot of the current window.",
+    "dependency": {
+        "requirements_file": "requirements_0.txt"
+    },
+    "container_resources": {
+        "requests": {
+            "cpu": 100,
+            "memory": 128
+        },
+        "limits": {
+            "cpu": 500,
+            "memory": 512
+        }
+    },
+    "tags": [
+        "selenium",
+        "web-browser"
+    ],
+    "style": {
+        "node_label": "Take Screenshot",
+        "icon_class_name": "fa-solid fa-globe-pointer"
+    }
+}
