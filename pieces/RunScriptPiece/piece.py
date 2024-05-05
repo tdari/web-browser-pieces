@@ -1,5 +1,3 @@
-from string import Template
-
 from domino.base_piece import BasePiece
 
 from .models import InputModel, OutputModel
