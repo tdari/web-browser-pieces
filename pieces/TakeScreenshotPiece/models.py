@@ -1,5 +1,3 @@
-import uuid
-
 from pydantic import BaseModel, Field
 
 
@@ -23,6 +21,5 @@ class OutputModel(BaseModel):
     )
 
     image_path: str = Field(
-        default=f"/screenshots/{str(uuid.uuid4())}.png",
         description="Path to the screenshot image.",
     )

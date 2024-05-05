@@ -1,5 +1,5 @@
 {
-    "name": "TakeScreenShotPiece",
+    "name": "TakeScreenshotPiece",
     "description": "Takes screenshot of the current window.",
     "dependency": {
         "requirements_file": "requirements_0.txt"
