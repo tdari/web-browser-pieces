@@ -27,6 +27,5 @@ class TakeScreenshotPiece(BasePiece):
             }
         )
 
-        self.display_result = {"file_type": "png", "file_path": image_path}
 
         return OutputModel(script=script, image_path=image_path)
