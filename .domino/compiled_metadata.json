@@ -209,6 +209,78 @@
         "secrets_schema": null,
         "source_url": "https://github.com/tdari/web-browser-pieces/tree/main/pieces/LoadPagePiece"
     },
+    "TakeScreenshotPiece": {
+        "name": "TakeScreenshotPiece",
+        "dependency": {
+            "dockerfile": null,
+            "requirements_file": "requirements_0.txt"
+        },
+        "tags": [
+            "selenium",
+            "web-browser"
+        ],
+        "style": {
+            "node_label": "Take Screenshot",
+            "node_type": "default",
+            "node_style": {
+                "backgroundColor": "#ebebeb"
+            },
+            "useIcon": true,
+            "icon_class_name": "fa-solid fa-globe-pointer",
+            "iconStyle": {
+                "cursor": "pointer"
+            }
+        },
+        "description": "Takes screenshot of the current window.",
+        "container_resources": {
+            "requests": {
+                "cpu": 100,
+                "memory": 128
+            },
+            "limits": {
+                "cpu": 500,
+                "memory": 512
+            }
+        },
+        "input_schema": {
+            "description": "Take Screenshot Piece Input Model",
+            "properties": {
+                "script": {
+                    "description": "Preceding script.",
+                    "title": "Script",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "script"
+            ],
+            "title": "InputModel",
+            "type": "object"
+        },
+        "output_schema": {
+            "description": "Take Screenshot Piece Output Model",
+            "properties": {
+                "script": {
+                    "description": "Parsed script of this piece.",
+                    "title": "Script",
+                    "type": "string"
+                },
+                "image_path": {
+                    "description": "Path to the screenshot image.",
+                    "title": "Image Path",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "script",
+                "image_path"
+            ],
+            "title": "OutputModel",
+            "type": "object"
+        },
+        "secrets_schema": null,
+        "source_url": "https://github.com/tdari/web-browser-pieces/tree/main/pieces/TakeScreenshotPiece"
+    },
     "CloseBrowserPiece": {
         "name": "CloseBrowserPiece",
         "dependency": {
